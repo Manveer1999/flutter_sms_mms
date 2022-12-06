@@ -164,7 +164,8 @@ class _MyAppState extends State<MyApp> {
       await SmsMms.send(
           recipients: recipientsList,
           message: messageController.text,
-          filePath: filePath);
+          filePath: filePath,
+      );
     } else {
       Fluttertoast.showToast(msg: 'Please add at-least one recipient');
     }

@@ -1,9 +1,7 @@
 name: sms_mms
-description: A new Flutter project.
-version: 0.0.1
-authors:
-  - Manveer Bansal
-homepage:
+description: Flutter plugin for launching native messenger with SMS/MMS
+version: 0.0.1+1
+homepage: https://github.com/Manveer1999/flutter_sms_mms
 
 environment:
   sdk: '>=2.18.2 <3.0.0'
