@@ -3,6 +3,11 @@
 A flutter plugin to open native messenger for SMS/MMS
 
 This plugin primarily fulfils the requirement of opening native messaging app (*Google Messages*) on android & (*iMessage*) on iOS directly for sharing media.
+### IOS Demo
+https://user-images.githubusercontent.com/64741771/205976966-82406d92-fd50-4b10-a4bd-d2f121bd13aa.mov
+
+### Android Demo
+https://user-images.githubusercontent.com/64741771/205976824-2483f3b1-d946-430c-9b3e-dbf1054ee5b8.mov
 
 ### Fetures offered by plugin:
 
@@ -15,7 +20,8 @@ This plugin primarily fulfils the requirement of opening native messaging app (*
   - Opening native messenger with recipients & message
   - Opening native messenger with recipients, message & file
   
-_Code implementation:_  
+### Code implementation:
+Implemention is quite easy, just call the function SmsMms.send()
 <pre>
     <code>
         await SmsMms.send(
@@ -26,4 +32,13 @@ _Code implementation:_
     </code>
 </pre>
 
+##### recipients
+- List of users to send message to. It contains list of string as eg. ["12345678", "1234"]
+##### message
+- Contains to body of the message to be sent
+##### filePath
+- Contains the path of the attachment to shared as MMS
+
+### Issues
+Some time on android, file does not get attached on first run
 
