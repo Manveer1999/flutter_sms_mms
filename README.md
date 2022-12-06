@@ -1,15 +1,29 @@
-# sms_mms
+# SMS/MMS
 
-A new Flutter project.
+A flutter plugin to open native messenger for SMS/MMS
 
-## Getting Started
+This plugin primarily fulfils the requirement of opening native messaging app (*Google Messages*) on android & (*iMessage*) on iOS directly for sharing media.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+### Fetures offered by plugin:
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### SMS:
+  - Opening native messenger only with recipients 
+  - Opening native messenger with recipients & message
+
+#### MMS:  
+  - Opening native messenger only with recipients 
+  - Opening native messenger with recipients & message
+  - Opening native messenger with recipients, message & file
+  
+_Code implementation:_  
+<pre>
+    <code>
+        await SmsMms.send(
+          recipients: recipientsList,
+          message: messageController.text,
+          filePath: filePath,
+      );
+    </code>
+</pre>
+
 
