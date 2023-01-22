@@ -1,6 +1,6 @@
 name: sms_mms
-description: Flutter plugin for launching native messenger with SMS/MMS
-version: 0.0.1+1
+description: Flutter plugin for launching native messenger with SMS/MMS. Launches native messaging app without showing intent chooser on Android.
+version: 0.0.2
 homepage: https://github.com/Manveer1999/flutter_sms_mms
 
 environment:

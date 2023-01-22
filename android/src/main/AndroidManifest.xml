@@ -1,6 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.example.sms_mms">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.sms_mms">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
     <application>
         <activity android:name="com.example.sms_mms.SmsMmsPlugin"
             android:exported="true"

@@ -1,3 +1,5 @@
-## 0.0.1
+## 0.0.2
 
-* Send SMS & MMS with native messengers easily
+* Fixed Attachment Issue for Devices using customized Messaging App (eg. Samsung, Mi)
+* Improved android side implementation
+* Added error messages as a Toast
