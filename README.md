@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/64741771/205976966-82406d92-fd50-4b10-
 https://user-images.githubusercontent.com/64741771/205976824-2483f3b1-d946-430c-9b3e-dbf1054ee5b8.mov
 
 ## Android Native Side
-#### Make sure to add this files file_paths.xml under (example/android/app/src/main/res/xml/file_paths.xml)
+Make sure to add this file file_paths.xml under (https://github.com/Manveer1999/flutter_sms_mms/blob/main/android/src/main/res/xml/file_paths.xml)
 
 ### Fetures offered by plugin:
 
