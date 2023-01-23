@@ -99,6 +99,7 @@ public class SmsMmsPlugin implements FlutterPlugin, MethodCallHandler {
 
         Intent shareIntent = new Intent(action);
         shareIntent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+        shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         shareIntent.putExtra("sms_body", message);
 
         if(filePath != null) {

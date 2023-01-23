@@ -57,10 +57,8 @@ class _MyAppState extends State<MyApp> {
                   child: ListView.separated(
                     itemCount: recipientsList.length,
                     scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 8
-                    ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     itemBuilder: (_, index) {
                       return recipientTile(recipientsList[index], index);
                     },
@@ -130,9 +128,10 @@ class _MyAppState extends State<MyApp> {
                 onPressed: sendMessage,
                 color: Colors.blue,
                 padding: const EdgeInsets.all(16),
-                child: const Text('Open Message App' , style: TextStyle(
-                  color: Colors.white
-                ),),
+                child: const Text(
+                  'Open Message App',
+                  style: TextStyle(color: Colors.white),
+                ),
               )
             ],
           ),
@@ -142,10 +141,17 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget recipientTile(String number, int index) {
-    return Chip(label: Text(number), deleteIcon: const Icon(Icons.close, size: 20,), onDeleted: () {
-      recipientsList.removeAt(index);
-      setState(() { });
-    },);
+    return Chip(
+      label: Text(number),
+      deleteIcon: const Icon(
+        Icons.close,
+        size: 20,
+      ),
+      onDeleted: () {
+        recipientsList.removeAt(index);
+        setState(() {});
+      },
+    );
   }
 
   Future<void> pickFile() async {
@@ -162,9 +168,9 @@ class _MyAppState extends State<MyApp> {
   Future<void> sendMessage() async {
     if (recipientsList.isNotEmpty) {
       await SmsMms.send(
-          recipients: recipientsList,
-          message: messageController.text,
-          filePath: filePath,
+        recipients: recipientsList,
+        message: messageController.text,
+        filePath: filePath,
       );
     } else {
       Fluttertoast.showToast(msg: 'Please add at-least one recipient');
