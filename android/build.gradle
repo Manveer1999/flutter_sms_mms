@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:7.3.0'
     }
 }
 
@@ -19,10 +19,16 @@ rootProject.allprojects {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+    }
+}
+
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    namespace "com.example.sms_mms"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,6 +36,13 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        compileSdk 33
+        minSdkVersion 21
     }
+    compileSdk 33
+}
+
+dependencies{
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.core:core:1.7.0' // Or the latest version available
 }

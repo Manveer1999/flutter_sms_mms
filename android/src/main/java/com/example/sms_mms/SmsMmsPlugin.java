@@ -77,14 +77,12 @@ public class SmsMmsPlugin implements FlutterPlugin, MethodCallHandler {
         String DEFAULT_MESSAGE_PACKAGE_NAME = "";
 
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            String packageName = Telephony.Sms.getDefaultSmsPackage(context);
-            if(packageName != null) {
-                DEFAULT_MESSAGE_PACKAGE_NAME = packageName;
-            }
-            if(packageName == null) {
-                throw new Exception("Default sms app not found");
-            }
+        String packageName = Telephony.Sms.getDefaultSmsPackage(context);
+        if(packageName != null) {
+            DEFAULT_MESSAGE_PACKAGE_NAME = packageName;
+        }
+        if(packageName == null) {
+            throw new Exception("Default sms app not found");
         }
 
         if (filePath != null) {
