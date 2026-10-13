@@ -10,12 +10,19 @@ class MethodChannelSmsMms extends SmsMmsPlatform {
   final methodChannel = const MethodChannel('sms_mms');
 
   @override
-  Future<void> sendMms(
-      {required List<String> phones, String? filePath, required String text}) async {
-    await methodChannel.invokeMethod('sendMms', {
-      'path' : filePath,
-      'recipientNumbers' : phones,
-      'message' : text
+  Future<SmsMmsResult> sendMms({
+    required List<String> phones,
+    required String text,
+    List<String> filePaths = const [],
+  }) async {
+    final status = await methodChannel.invokeMethod<String>('sendMms', {
+      'recipientNumbers': phones,
+      'message': text,
+      'paths': filePaths,
     });
+    return SmsMmsResult.values.firstWhere(
+      (r) => r.name == status,
+      orElse: () => SmsMmsResult.unknown,
+    );
   }
 }

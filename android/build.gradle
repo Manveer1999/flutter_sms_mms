@@ -1,5 +1,5 @@
-group 'com.example.sms_mms'
-version '1.0'
+group = "io.github.manveer1999.sms_mms"
+version = "1.0"
 
 buildscript {
     repositories {
@@ -8,41 +8,35 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
-    }
-}
-
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
+        classpath("com.android.tools.build:gradle:8.7.3")
     }
 }
 
 allprojects {
     repositories {
         google()
+        mavenCentral()
     }
 }
 
-apply plugin: 'com.android.library'
+apply plugin: "com.android.library"
 
 android {
-    namespace "com.example.sms_mms"
+    namespace = "io.github.manveer1999.sms_mms"
+
+    compileSdk = 35
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     defaultConfig {
-        compileSdk 33
-        minSdkVersion 21
+        minSdk = 21
     }
-    compileSdk 33
 }
 
-dependencies{
-    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'androidx.core:core:1.7.0' // Or the latest version available
+dependencies {
+    implementation("androidx.annotation:annotation:1.9.1")
+    implementation("androidx.core:core:1.13.1")
 }
